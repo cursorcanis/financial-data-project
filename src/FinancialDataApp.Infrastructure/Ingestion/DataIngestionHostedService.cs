@@ -9,6 +9,7 @@ using FinancialDataApp.Core.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Options;
 
 namespace FinancialDataApp.Infrastructure.Ingestion
 {
@@ -16,13 +17,15 @@ namespace FinancialDataApp.Infrastructure.Ingestion
     {
         private readonly IServiceProvider _services;
         private readonly ILogger<DataIngestionHostedService> _logger;
+        private readonly IOptions<IngestionOptions> _options;
         private readonly HttpClient _httpClient;
         private Timer? _timer;
 
-        public DataIngestionHostedService(IServiceProvider services, ILogger<DataIngestionHostedService> logger)
+        public DataIngestionHostedService(IServiceProvider services, ILogger<DataIngestionHostedService> logger, IOptions<IngestionOptions> options)
         {
             _services = services;
             _logger = logger;
+            _options = options;
             _httpClient = new HttpClient();
         }
 
@@ -41,6 +44,13 @@ namespace FinancialDataApp.Infrastructure.Ingestion
                 var dataSourceService = scope.ServiceProvider.GetRequiredService<IDataSourceService>();
                 var realTimeDataService = scope.ServiceProvider.GetRequiredService<IRealTimeDataService>();
                 var healthService = scope.ServiceProvider.GetRequiredService<IHealthService>();
+
+                // In demo mode, skip external ingestion and only perform health checks.
+                if (_options.Value.DemoMode)
+                {
+                    await healthService.CheckAsync();
+                    return;
+                }
 
                 var sources = await dataSourceService.GetAllAsync();
                 foreach (var source in sources)

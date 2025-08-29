@@ -9,6 +9,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Data.SqlClient;
 using Microsoft.IdentityModel.Tokens;
 using Serilog;
+using FinancialDataApp.API.Hosted;
+using FinancialDataApp.Infrastructure.Seeding;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -29,6 +31,7 @@ builder.Services.AddScoped<IHealthService, HealthService>();
 builder.Services.AddScoped<IAuditService, AuditService>();
 builder.Services.AddScoped<IDynamicFieldService, DynamicFieldService>();
 builder.Services.AddScoped<IExportService, ExportService>();
+builder.Services.AddScoped<DemoDataSeeder>();
 
 // SignalR
 builder.Services.AddSignalR();
@@ -36,6 +39,7 @@ builder.Services.AddSignalR();
 // Ingestion
 builder.Services.Configure<IngestionOptions>(builder.Configuration.GetSection("Ingestion"));
 builder.Services.AddHostedService<DataIngestionHostedService>();
+builder.Services.AddHostedService<DemoSeederHostedService>();
 
 // Auth (JWT)
 var key = builder.Configuration["Jwt:Key"] ?? throw new Exception("Jwt:Key missing");
@@ -145,6 +149,17 @@ app.MapHub<HealthHub>("/hubs/health");
 app.MapHealthChecks("/health");
 app.Run();
 
-// Placeholder hubs
-public class DataHub : Microsoft.AspNetCore.SignalR.Hub { }
+/* Minimal hub implementations to satisfy frontend subscriptions */
+public class DataHub : Microsoft.AspNetCore.SignalR.Hub
+{
+    public System.Threading.Tasks.Task SubscribeToIngestionUpdates() => System.Threading.Tasks.Task.CompletedTask;
+    public System.Threading.Tasks.Task SubscribeToHealthUpdates() => System.Threading.Tasks.Task.CompletedTask;
+
+    public System.Threading.Tasks.Task SubscribeToDataSource(System.Guid dataSourceId) =>
+        Groups.AddToGroupAsync(Context.ConnectionId, $"ds:{dataSourceId}");
+
+    public System.Threading.Tasks.Task UnsubscribeFromDataSource(System.Guid dataSourceId) =>
+        Groups.RemoveFromGroupAsync(Context.ConnectionId, $"ds:{dataSourceId}");
+}
+
 public class HealthHub : Microsoft.AspNetCore.SignalR.Hub { }

@@ -25,6 +25,7 @@ services:
       - JWT__Issuer=${JWT_ISSUER:-fda}
       - JWT__Audience=${JWT_AUDIENCE:-fda}
       - JWT__Key=${JWT_KEY:-supersecretkey}
+      - Ingestion__DemoMode=true
     depends_on:
       - sqlserver
     ports:

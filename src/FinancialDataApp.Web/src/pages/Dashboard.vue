@@ -37,7 +37,8 @@
         <Line
           v-if="chartData.labels.length > 0"
           :data="chartData"
-          :options="chartOptions"
+          :options="lineChartOptions"
+          :height="300"
         />
       </div>
 
@@ -164,7 +165,38 @@ const recentActivities = ref<any[]>([]);
 const systemHealth = ref<HealthUpdate[]>([]);
 
 // Chart options
-const chartOptions = {
+const lineChartOptions = {
+  responsive: true,
+  maintainAspectRatio: false,
+  animation: { duration: 0 },
+  plugins: {
+    legend: {
+      display: true,
+      position: "top" as const,
+    },
+    title: {
+      display: false,
+    },
+  },
+  scales: {
+    x: {
+      display: true,
+      grid: {
+        display: false,
+      },
+    },
+    y: {
+      display: true,
+      beginAtZero: true,
+      min: 0,
+      max: 100,
+      ticks: { stepSize: 10 },
+      grace: "5%",
+    },
+  },
+};
+
+const barChartOptions = {
   responsive: true,
   maintainAspectRatio: false,
   plugins: {
@@ -188,10 +220,6 @@ const chartOptions = {
       beginAtZero: true,
     },
   },
-};
-
-const barChartOptions = {
-  ...chartOptions,
   indexAxis: "x" as const,
 };
 
@@ -394,7 +422,8 @@ onUnmounted(() => {
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  min-height: 300px;
+  height: 320px;
+  position: relative;
 }
 
 .chart-container h3 {
