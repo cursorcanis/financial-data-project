@@ -1,0 +1,71 @@
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: fda_sql
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=${SA_PASSWORD:-YourStrong!Passw0rd}
+      - MSSQL_PID=Developer
+    ports:
+      - "1433:1433"
+    volumes:
+      - mssqldata:/var/opt/mssql
+    networks:
+      - fda_net
+
+  api:
+    build:
+      context: .
+      dockerfile: src/FinancialDataApp.API/Dockerfile
+    container_name: fda_api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:8080
+      - ConnectionStrings__Default=Server=sqlserver;Database=FinancialDataDb;User ID=sa;Password=YourStrong!Passw0rd;TrustServerCertificate=True
+      - JWT__Issuer=${JWT_ISSUER:-fda}
+      - JWT__Audience=${JWT_AUDIENCE:-fda}
+      - JWT__Key=${JWT_KEY:-supersecretkey}
+    depends_on:
+      - sqlserver
+    ports:
+      - "8080:8080"
+    networks:
+      - fda_net
+
+  web:
+    build:
+      context: .
+      dockerfile: src/FinancialDataApp.Web/Dockerfile
+    container_name: fda_web
+    command:
+      [
+        "sh",
+        "-c",
+        "cp -r /app/dist/* /web-dist && echo 'SPA copied to volume' && tail -f /dev/null",
+      ]
+    volumes:
+      - web_dist:/web-dist
+    networks:
+      - fda_net
+
+  nginx:
+    build:
+      context: ./docker/nginx
+      dockerfile: Dockerfile
+    container_name: fda_nginx
+    depends_on:
+      - web
+      - api
+    ports:
+      - "80:80"
+    volumes:
+      - web_dist:/usr/share/nginx/html:ro
+    networks:
+      - fda_net
+
+volumes:
+  mssqldata:
+  web_dist:
+
+networks:
+  fda_net:

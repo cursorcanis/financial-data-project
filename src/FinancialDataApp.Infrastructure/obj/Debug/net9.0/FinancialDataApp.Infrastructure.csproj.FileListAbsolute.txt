@@ -1,0 +1,17 @@
+C:\Users\Alfredo\Desktop\_desktop\_it_training\_projects\FinancialDataApp\src\FinancialDataApp.Infrastructure\bin\Debug\net9.0\FinancialDataApp.Infrastructure.deps.json
+C:\Users\Alfredo\Desktop\_desktop\_it_training\_projects\FinancialDataApp\src\FinancialDataApp.Infrastructure\bin\Debug\net9.0\FinancialDataApp.Infrastructure.runtimeconfig.json
+C:\Users\Alfredo\Desktop\_desktop\_it_training\_projects\FinancialDataApp\src\FinancialDataApp.Infrastructure\bin\Debug\net9.0\FinancialDataApp.Infrastructure.dll
+C:\Users\Alfredo\Desktop\_desktop\_it_training\_projects\FinancialDataApp\src\FinancialDataApp.Infrastructure\bin\Debug\net9.0\FinancialDataApp.Infrastructure.pdb
+C:\Users\Alfredo\Desktop\_desktop\_it_training\_projects\FinancialDataApp\src\FinancialDataApp.Infrastructure\bin\Debug\net9.0\FinancialDataApp.Core.dll
+C:\Users\Alfredo\Desktop\_desktop\_it_training\_projects\FinancialDataApp\src\FinancialDataApp.Infrastructure\bin\Debug\net9.0\FinancialDataApp.Core.pdb
+C:\Users\Alfredo\Desktop\_desktop\_it_training\_projects\FinancialDataApp\src\FinancialDataApp.Infrastructure\obj\Debug\net9.0\FinancialDataApp.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\Alfredo\Desktop\_desktop\_it_training\_projects\FinancialDataApp\src\FinancialDataApp.Infrastructure\obj\Debug\net9.0\FinancialDataApp.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Alfredo\Desktop\_desktop\_it_training\_projects\FinancialDataApp\src\FinancialDataApp.Infrastructure\obj\Debug\net9.0\FinancialDataApp.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\Alfredo\Desktop\_desktop\_it_training\_projects\FinancialDataApp\src\FinancialDataApp.Infrastructure\obj\Debug\net9.0\FinancialDataApp.Infrastructure.AssemblyInfo.cs
+C:\Users\Alfredo\Desktop\_desktop\_it_training\_projects\FinancialDataApp\src\FinancialDataApp.Infrastructure\obj\Debug\net9.0\FinancialDataApp.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Alfredo\Desktop\_desktop\_it_training\_projects\FinancialDataApp\src\FinancialDataApp.Infrastructure\obj\Debug\net9.0\Financia.9ED0F503.Up2Date
+C:\Users\Alfredo\Desktop\_desktop\_it_training\_projects\FinancialDataApp\src\FinancialDataApp.Infrastructure\obj\Debug\net9.0\FinancialDataApp.Infrastructure.dll
+C:\Users\Alfredo\Desktop\_desktop\_it_training\_projects\FinancialDataApp\src\FinancialDataApp.Infrastructure\obj\Debug\net9.0\refint\FinancialDataApp.Infrastructure.dll
+C:\Users\Alfredo\Desktop\_desktop\_it_training\_projects\FinancialDataApp\src\FinancialDataApp.Infrastructure\obj\Debug\net9.0\FinancialDataApp.Infrastructure.pdb
+C:\Users\Alfredo\Desktop\_desktop\_it_training\_projects\FinancialDataApp\src\FinancialDataApp.Infrastructure\obj\Debug\net9.0\FinancialDataApp.Infrastructure.genruntimeconfig.cache
+C:\Users\Alfredo\Desktop\_desktop\_it_training\_projects\FinancialDataApp\src\FinancialDataApp.Infrastructure\obj\Debug\net9.0\ref\FinancialDataApp.Infrastructure.dll

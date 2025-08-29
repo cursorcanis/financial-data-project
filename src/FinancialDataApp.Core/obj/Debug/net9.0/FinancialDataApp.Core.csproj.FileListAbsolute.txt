@@ -1,0 +1,11 @@
+C:\Users\Alfredo\Desktop\_desktop\_it_training\_projects\FinancialDataApp\src\FinancialDataApp.Core\bin\Debug\net9.0\FinancialDataApp.Core.deps.json
+C:\Users\Alfredo\Desktop\_desktop\_it_training\_projects\FinancialDataApp\src\FinancialDataApp.Core\bin\Debug\net9.0\FinancialDataApp.Core.dll
+C:\Users\Alfredo\Desktop\_desktop\_it_training\_projects\FinancialDataApp\src\FinancialDataApp.Core\bin\Debug\net9.0\FinancialDataApp.Core.pdb
+C:\Users\Alfredo\Desktop\_desktop\_it_training\_projects\FinancialDataApp\src\FinancialDataApp.Core\obj\Debug\net9.0\FinancialDataApp.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Alfredo\Desktop\_desktop\_it_training\_projects\FinancialDataApp\src\FinancialDataApp.Core\obj\Debug\net9.0\FinancialDataApp.Core.AssemblyInfoInputs.cache
+C:\Users\Alfredo\Desktop\_desktop\_it_training\_projects\FinancialDataApp\src\FinancialDataApp.Core\obj\Debug\net9.0\FinancialDataApp.Core.AssemblyInfo.cs
+C:\Users\Alfredo\Desktop\_desktop\_it_training\_projects\FinancialDataApp\src\FinancialDataApp.Core\obj\Debug\net9.0\FinancialDataApp.Core.csproj.CoreCompileInputs.cache
+C:\Users\Alfredo\Desktop\_desktop\_it_training\_projects\FinancialDataApp\src\FinancialDataApp.Core\obj\Debug\net9.0\FinancialDataApp.Core.dll
+C:\Users\Alfredo\Desktop\_desktop\_it_training\_projects\FinancialDataApp\src\FinancialDataApp.Core\obj\Debug\net9.0\refint\FinancialDataApp.Core.dll
+C:\Users\Alfredo\Desktop\_desktop\_it_training\_projects\FinancialDataApp\src\FinancialDataApp.Core\obj\Debug\net9.0\FinancialDataApp.Core.pdb
+C:\Users\Alfredo\Desktop\_desktop\_it_training\_projects\FinancialDataApp\src\FinancialDataApp.Core\obj\Debug\net9.0\ref\FinancialDataApp.Core.dll

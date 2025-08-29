@@ -1,0 +1,14 @@
+# Ignore node modules and build output
+node_modules
+dist
+
+# Logs
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# System/editor files
+.DS_Store
+.vscode
+.git
+.gitignore

@@ -1,0 +1,16 @@
+# Ignore build outputs and user-specific files
+bin/
+obj/
+.vs/
+*.user
+*.swp
+
+# Git and editor configs
+.git
+.gitignore
+.vscode
+.DS_Store
+
+# Test artifacts (if any nested under API)
+**/bin
+**/obj

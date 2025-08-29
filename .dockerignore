@@ -1,0 +1,26 @@
+# Global ignore for Docker build context
+
+# Git and editors
+.git
+.gitignore
+.vscode
+.DS_Store
+*.user
+*.swp
+*.suo
+*.vs
+
+# Node (frontend)
+src/FinancialDataApp.Web/node_modules
+src/FinancialDataApp.Web/dist
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# .NET (backend)
+**/bin
+**/obj
+
+# Tests artifacts
+tests/**/bin
+tests/**/obj
